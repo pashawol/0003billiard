@@ -1,5 +1,12 @@
-.header{
-	
+.navbar {
+  display: flex;
+  align-items: center;
+  font-size: rem(16);
+
+  .navbar-custom-menu {
+    margin-left: auto;
+  }
+
   // 
   @include media-breakpoint-up(xl) {}
 
@@ -35,4 +42,53 @@
   @include media-breakpoint-down(sm) {}
 
   @include media-breakpoint-down(xs) {}
- }
+}
+
+.ball-toggle {
+  // float: left;
+  position: relative;
+  padding: rem(10);
+
+  .icon {
+    color: $accent;
+    font-size: rem(26);
+  }
+
+  &__count {
+    position: absolute;
+    right: rem(8);
+    top: rem(8);
+    width: rem(15px);
+    height: rem(15px);
+    background-color: $warning;
+    text-align: center;
+    border-radius: 50%;
+    color: $light;
+    font-size: rem(10px);
+    padding-top: rem(1);
+
+  }
+
+  margin-right: 6%;
+}
+
+.calendar-block {
+  margin-right: 6%;
+
+}
+
+.calendar-block,
+.time-block {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-size: rem(16);
+
+  .icon {
+    font-size: rem(18);
+    margin-right: rem(8);
+    color: $warning;
+    position: relative;
+    top: rem(-1);
+  }
+}

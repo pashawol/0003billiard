@@ -1,0 +1,101 @@
+mixin s-order()
+	.s-order
+		.container-fluid
+			.row.flex-container
+				.col-md-6.left-side-block
+					.order-number
+						h1 Заказ № 5533
+						.table-wrapper
+							.mobile-show  Наименование
+							table.table(class='order-priсe', align='center')
+								thead
+									tr
+										td Наименование
+										td Кол-во
+										td Цена
+										td Итого
+								tbody
+									tr(data-title="Картошка-фри")
+										td Картошка-фри
+										td(data-title="Кол-во"): .inner 
+											.block-add
+												button.btn.btn-warning.btn-sm(type='button') -
+												span 2
+												button.btn.btn-warning.btn-sm(type='button') +
+										td(data-title="Цена"): .inner 30.00
+										td(data-title="Итого"): .inner  60.00
+									tr(data-title="Stella Artois 500 мл")
+										td Stella Artois 500 мл
+										td(data-title="Кол-во"): .inner 
+											.block-add
+												button.btn.btn-warning.btn-sm(type='button') -
+												span 3
+												button.btn.btn-warning.btn-sm(type='button') +
+										td(data-title="Цена"): .inner 3333.00
+										td(data-title="Итого"): .inner  9999.00
+									tr(data-title="Пиво розливное Stella Artois 300 мл")
+										td Пиво розливное Stella Artois 300 мл
+										td(data-title="Кол-во"): .inner 
+											.block-add
+												button.btn.btn-warning.btn-sm(type='button') -
+												span 1
+												button.btn.btn-warning.btn-sm(type='button') +
+										td(data-title="Цена"): .inner 26.00
+										td(data-title="Итого"): .inner  26.00
+					.total-order
+						.textarea-wrapper
+							textarea.wishes-to-order(placeholder='Тут Вы можете написать пожилания к заказу')
+						table.table(class='order-final-priсe', align='center')
+							tbody
+								tr
+									td Итого
+									td 188,00 ₴
+									td К оплтате
+								tr
+									td Скидка
+									td 5%
+									td.total-price 869.60 ₴
+						.to-pay.clearfix
+							button.pay-check(type='button')
+								img(src='images/pay-button-1.png')
+							button.pay-check(type='button')
+								img(src='images/pay-button-2.png')
+							button.pay-check(type='button')
+								img(src='images/pay-button-3.png')
+							button.btn.btn-warning.pull-right(type='button') Оплатить
+					// </div>
+				.col-md-6.order-menu
+					.categories-menu.clearfix
+						button.btn.btn-primary(type='button') Меню
+						button.btn.btn-primary(type='button') Напитки
+						button.btn.btn-primary(type='button') Безалкогольные
+						button.btn.btn-warning.pull-right(type='button')
+							img(src='images/search-button.png', alt='infinite')
+					.right-site-block
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')
+						.position-item
+							p Холодные напитки
+							img(src='images/cold-lemonade.jpg', alt='infinite')

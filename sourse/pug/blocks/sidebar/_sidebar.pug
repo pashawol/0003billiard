@@ -1,0 +1,97 @@
+mixin sidebar()
+	// start sidebar
+	aside.main-sidebar
+		section.sidebar
+			ul.sidebar-menu.tree(data-widget='tree')
+				mixin item(i,t)
+					li 
+						a(href='#')
+							.sidebar-menu__icon-wrap
+								img(src=`img/svg/side-menu-${i}.svg`, alt="")
+							span= t
+ 
+				+item("1","Уведомления")
+				li.active
+					a(href='default.htm')
+						i.fa.fa-link
+						span Панель
+ 
+				+item("2","База клиентов")
+				+item("3","Бронирования") 
+				+item("4","Бильярдная") 
+				li
+					a(href='open-table')
+						i.fa.fa-history
+						span Открытые столы
+				+item("5","Открытые заказы") 
+ 
+				li.treeview
+					a(style='cursor: pointer;')
+						.sidebar-menu__icon-wrap
+							img(src=`img/svg/side-menu-6.svg`, alt="")
+						span Конфигурация
+						span.pull-right-container
+							i.fa.fa-angle-down.pull-right
+					ul.treeview-menu
+						li
+							a(href='table') Бильярдные столы
+						li
+							a(href='tarif') Тарификация клуба
+						li
+							a(href='user')  Пользователи бэк-офиса
+						li
+							a(href='discount') Скидки
+						li
+							a(href='cupon') Купоны
+						li
+							a(href='socket') Освещение
+				li.treeview
+					a(style='cursor: pointer;')
+						.sidebar-menu__icon-wrap
+							img(src=`img/svg/side-menu-7.svg`, alt="")
+						span Cклад
+						span.pull-right-container
+							i.fa.fa-angle-down.pull-right
+					ul.treeview-menu
+						li
+							a(href='bars/ingredient')
+								span Составляющие
+						li
+							a(href='stock')
+								span Товары
+						li
+							a(href='category')
+								span Категории
+				li.treeview
+					a(style='cursor: pointer;')
+						.sidebar-menu__icon-wrap
+							img(src=`img/svg/side-menu-8.svg`, alt="")
+						span Документы
+						span.pull-right-container
+							i.fa.fa-angle-down.pull-right
+					ul.treeview-menu
+						li
+							a(href='doc/act')
+								span Акты
+						li
+							a(href='doc/compare')
+								span Cравнить акты
+						li
+							a(href='doc/purchaseinvoice')
+								span Приходная накладная
+						li
+							a(href='doc/consumableinvoice')
+								span Расходные накладные
+				li
+					a(href='stat')
+						.sidebar-menu__icon-wrap
+							img(src=`img/svg/side-menu-9.svg`, alt="")
+						span История заказов
+				li
+					a(href='change')
+						.sidebar-menu__icon-wrap
+							img(src=`img/svg/side-menu-10.svg`, alt="")
+						span Смены
+				+item("11","Аналитика") 
+	// end sidebar
+	

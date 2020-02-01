@@ -1,7 +1,42 @@
 mixin header()
 
-	// start HEADER.header
-	+b.HEADER.header.block-with-lazy
-		block
-	
-	// end HEADER.header
+	// start HEADER.main-header
+	header.main-header
+		a.logo(href='default.htm')
+			span.logo-mini
+				img(style='left: 0; top: -4px; width: 43px; position: relative;', src='images/logo.png')
+			span.logo-lg
+				img(style='left: -5px; top: -4px; width: 43px; position: relative;', src='images/logo.png')
+				b Billiards
+				| CRM
+		nav.navbar.navbar-static-top(role='navigation')
+			a.sidebar-toggle(role='button', href='#', data-toggle='push-menu')
+				span.sr-only Toggle navigation
+			
+			+b.ball-toggle.hidden-xs
+				+icon("ball")
+				+e.count 5
+			+b.calendar-block.hidden-xs
+				+icon("calendar")
+				| 10.01.2020
+			
+			+b.time-block.hidden-xs
+				+icon("time")
+				| 23:10
+			
+			.navbar-custom-menu
+				ul.nav.navbar-nav
+					li.dropdown.user.user-menu
+						a(href='sessionLng@lng=ua') ua
+					li.dropdown.user.user-menu
+						a(href='sessionLng@lng=ru') ru
+					li.dropdown.user.user-menu
+						a.dropdown-toggle(href='#', data-toggle='dropdown')
+							img.user-image(alt='User Image', src='public/avatars/QLseNfAPC3QqEnkf8DMiB7avQkHoQ2aLa50ILTGm.jpeg')
+							span#loginUser.hidden-xs Aleks Majlo
+					li
+						a(onclick="event.preventDefault(); document.getElementById('logout-form').submit();", href='logout')
+							| Виход
+					form#logout-form(style='display: none;', action='https://crm.billiard-city.com/logout', method='POST')
+						input(name='_token', type='hidden', value='Os0ZiRIvSxa8xr77R8R0cIYjzJpL8l6zRWSVvtr2')
+	// end HEADER.main-header
