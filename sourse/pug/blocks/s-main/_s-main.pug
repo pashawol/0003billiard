@@ -1,0 +1,125 @@
+mixin s-main()
+	// start s-main
+	+b.s-main.section#s-main&attributes(attributes)
+		.container-fluid 
+			.rowf 
+				+b.s-main-sidebar.colf-xl-auto
+					.rowf
+						mixin item(bg, i,t,t1, t2, t3)
+							.colf-xl-12.colf-sm-6
+								+e.item(style=`background-color: ${bg};` )
+									+e.title
+										img(src=`img/svg/${i}`, alt="")
+										= t
+									.rowf
+										.colf-auto
+											+e.total 70
+										.colf= t1
+									
+									.rowf
+										.colf-auto
+											+e.total
+												span 20.000 ₴
+										.colf= t2
+									
+									.rowf
+										.colf-auto
+											+e.total(style=`color: ${bg};`)
+												span 200.000 ₴
+										.colf= t3
+						+item("#478ECC","bar.svg","BAR","Заказов за смену","Сумма за текущую смену","Доход за месяц")
+						+item("#F2994A","snooker.svg","Billiard","Заказов за смену","Сумма за текущую смену","Доход за месяц")
+						+item("#15499F","client.svg","Client","Человек за сегодня","Человек за месяц","Рекордное кол-во январь 2019")
+								
+				.colf
+					mixin table(bg, t, c="4")
+						+e.thead
+							+e.tr
+								+e.th.h5(style=`background-color: ${bg};`  )= t
+						+e.table-wrap
+							table
+								tbody
+									block
+							
+							+e.BUTTON.add(type="button")
+								img.res-i(src="img/svg/plus.svg", alt="")
+					+table('#478ecc','Открытые заказы')
+						mixin tr(a,b)
+							tr
+								td: +e.td-inner
+									img(src="img/svg/number.svg", alt="")
+									= a
+								td: +e.td-inner
+									img(src="img/svg/ukrainian-hryvnia.svg", alt="")
+
+									= b
+								td
+									+e.td-inner
+										img(src="img/svg/comment.svg", alt="") 
+										span.d-none.d-md-block коммент. 
+										span.d-md-none комментарий к заказу
+								td
+									+e.td-inner
+										span.d-none.d-sm-block подробности 
+										+e.SPAN.plus +
+						+tr("213","2.000")
+						+tr("214","1.950")
+						+tr("215","3.000")
+						+tr("216","1.080")
+					+table('#f2994a','Открытые столы')
+						mixin tr(a,b,c)
+							tr
+								td
+									+e.td-inner
+										img(src="img/svg/number.svg", alt="")
+										= a
+								td
+									+e.td-inner
+										img(src="img/svg/clock.svg", alt="")
+										= b
+								td
+									+e.td-inner
+										img(src="img/svg/ukrainian-hryvnia.svg", alt="") 
+										= c
+										| #[sup открыт]
+								td
+									+e.td-inner
+										img(src="img/svg/cirlce.svg", alt="")
+										| №7 
+										span.d-none.d-lg-inline Русский бильярд
+						+tr("220","00:20",'50')
+						+tr("221","01:20",'200')
+						+tr("222","00:53",'132')
+						+tr("223","00:20",'382,5')
+					+table('#828282','Ближайшие бронирования')
+						mixin tr(a,b,c, d)
+							tr
+								td
+									+e.td-inner
+										img(src="img/svg/number.svg", alt="")
+										= a
+								td
+									+e.td-inner
+										img(src="img/svg/cirlce.svg", alt="")
+										span.d-none.d-lg-inline стол 
+
+										= b
+								td
+									+e.td-inner
+										+e.avatar
+											img(src="img/@2x/avatar.jpg", alt="") 
+										span.d-none.d-lg-inline  Контактное лицо
+								td
+									+e.td-inner
+										img(src="img/svg/calendar.svg", alt="")
+										= c  
+								td
+									+e.td-inner
+										img(src="img/svg/clock.svg", alt="")
+										= d
+
+						+tr("05","  № 13",'10.01.2020','15:30 - 17:30')
+						+tr("06","  № 9",'12.01.2020','15:30 - 17:30')
+						+tr("07","  № 4",'12.01.2020','17:30 - 19:30')
+						+tr("08","  № 2",'15.01.2020','17:30 - 18:30')
+	// end s-main

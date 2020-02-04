@@ -17,6 +17,10 @@ html {
 	font-size: $em-base;
 }
 
+body {
+	min-width: 320px;
+}
+
 .skin-blue .main-header .navbar {
 	background-color: $light;
 	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
@@ -170,5 +174,34 @@ html {
 	.content .container-fluid {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+.content-wrapper {
+	background-color: #ffffff;
+}
+
+.rowf {
+	@include make-row;
+
+	&::before,
+	&::after {
+		display: none;
+	}
+
+}
+
+
+.section {
+	@include media-breakpoint-up(sm) {
+
+		padding-top: rem(23);
+	}
+
+	// padding-top: rem(16);
+
+	.container {
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 }

@@ -6,7 +6,6 @@ $output-bourbon-deprecation-warnings: false;
 @import "mixin";
 @import "fonts";
 @import "./public/img/svg/_sprite";
-// @import "bootstrap-theme/bootstrap";
 
 // Option B: Include parts of Bootstrap
 
@@ -25,6 +24,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/images";
 // @import "./node_modules/bootstrap/scss/code";
 // @import "./node_modules/bootstrap/scss/grid";
+@import "bootstrap-theme/bootstrap";
 // @import "./node_modules/bootstrap/scss/tables";
 // @import "./node_modules/bootstrap/scss/forms";
 @import "./node_modules/bootstrap/scss/buttons";

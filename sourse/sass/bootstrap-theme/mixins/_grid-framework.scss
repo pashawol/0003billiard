@@ -4,6 +4,7 @@
 // any value of `$grid-columns`.
 
 @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+
   // Common properties for all breakpoints
   %grid-column {
     position: relative;
@@ -17,45 +18,56 @@
 
     // Allow columns to stretch full width below their breakpoints
     @for $i from 1 through $columns {
-      .col#{$infix}-#{$i} {
+      .colf#{$infix}-#{$i} {
         @extend %grid-column;
       }
     }
-    .col#{$infix},
-    .col#{$infix}-auto {
+
+    .colf#{$infix},
+    .colf#{$infix}-auto {
       @extend %grid-column;
     }
 
     @include media-breakpoint-up($breakpoint, $breakpoints) {
-      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
-      .col#{$infix} {
+
+      // Provide basic `.colf-{bp}` classes for equal-width flexbox columns
+      .colf#{$infix} {
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
       }
-      .col#{$infix}-auto {
+
+      .colf#{$infix}-auto {
         flex: 0 0 auto;
         width: auto;
         max-width: 100%; // Reset earlier grid tiers
       }
 
       @for $i from 1 through $columns {
-        .col#{$infix}-#{$i} {
+        .colf#{$infix}-#{$i} {
           @include make-col($i, $columns);
         }
       }
 
-      .order#{$infix}-first { order: -1; }
+      .order#{$infix}-first {
+        order: -1;
+      }
 
-      .order#{$infix}-last { order: $columns + 1; }
+      .order#{$infix}-last {
+        order: $columns + 1;
+      }
 
       @for $i from 0 through $columns {
-        .order#{$infix}-#{$i} { order: $i; }
+        .order#{$infix}-#{$i} {
+          order: $i;
+        }
       }
 
       // `$columns - 1` because offsetting by the width of an entire row isn't possible
       @for $i from 0 through ($columns - 1) {
-        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+        @if not ($infix==""and $i==0) {
+
+          // Avoid emitting useless .offset-0
           .offset#{$infix}-#{$i} {
             @include make-col-offset($i, $columns);
           }
